@@ -1,7 +1,11 @@
+//Simple webpack dev server for live reloading of
+//front end
+
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 
+//Runs server on localhost at port 3000
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
     watchOptions: {

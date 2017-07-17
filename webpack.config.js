@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+//webpack congif that uses sass and babel
 module.exports = {
   devtool: 'eval',
   entry: [

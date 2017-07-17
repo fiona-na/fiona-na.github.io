@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import Event from './event.jsx';
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello Thalmic!</h1>
+      <div>
+        <h1>Hello Thalmic!</h1>
+        <Event />
+      </div>
     );
   }
 }

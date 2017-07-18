@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import Event from './event.jsx'
 import { connect } from 'react-redux';
 
-@connect(
-  state => ({
-    events: state.events,
-    loading: state.loading
-  }),
-  dispatch => ({
-    refresh: () => dispatch({type: 'GET_EVENT_DATA'})
+@connect((state) => {
+    return {
+      events: state.events,
+      loading: state.loading
+    };
   })
-  )
 
 class EventContainer extends Component {
   render() {
@@ -20,7 +17,7 @@ class EventContainer extends Component {
         {events
         ? <div>
           {events.map((event) =>
-            <Event event={event} key={event.id} handleClick={this.handleClick}/>
+            <Event event={event} key={event.id} handleClick={this._handleClick}/>
           )}
           </div>
         : <p>events loading</p>
@@ -29,8 +26,9 @@ class EventContainer extends Component {
       )
   }
 
-  handleClick = (event) => {
+  _handleClick = (event) => {
     console.log(event)
+    this.props.dispatch({type: 'SET_EVENT_INFO', data: event})
   }
 }
 

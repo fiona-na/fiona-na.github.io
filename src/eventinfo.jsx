@@ -3,20 +3,22 @@ import { connect } from 'react-redux';
 
 @connect(
   state => ({
-    events: state.events,
-    loading: state.loading
-  }),
-  dispatch => ({
-    refresh: () => dispatch({type: 'GET_EVENT_DATA'})
+    event: state.selectedEvent,
   })
   )
 
 class EventInfo extends Component {
   render() {
-    // const { events } = this.props;
+    const { event } = this.props;
     return (
       <div className="event-info">
-        Event info here
+        {event
+          ? <div class="event-details">
+              <h1>{event.title}</h1>
+              <p>{event.data}</p>
+            </div>
+          : <p>No event Selected</p>
+        }
       </div>
       )
   }

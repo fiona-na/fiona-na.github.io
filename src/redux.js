@@ -22,7 +22,7 @@ export const apiMiddleware = store => next => action => {
   }
 };
 
-export const reducer = (state = { events: [], loading: true }, action) => {
+export const reducer = (state = { events: [], loading: true, selectedEvent: null }, action) => { //default state
   switch (action.type) {
     case 'GET_EVENT_DATA_LOADING':
       return {
@@ -37,6 +37,12 @@ export const reducer = (state = { events: [], loading: true }, action) => {
       };
     case 'GET_EVENT_DATA_ERROR':
       return state;
+    case 'SET_EVENT_INFO':
+    console.log("setting info")
+      return {
+        ...state,
+        selectedEvent: action.data,
+      }
     default:
       return state;
     }

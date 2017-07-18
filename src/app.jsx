@@ -3,6 +3,7 @@ import Event from './event.jsx';
 import EventContainer from './eventcontainer.jsx';
 import EventInfo from './eventinfo.jsx';
 import EventForm from './eventform.jsx';
+import ReactModal from 'react-modal';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer, apiMiddleware } from './redux'
@@ -13,7 +14,12 @@ store.dispatch({type: "GET_EVENT_DATA"})
 
 class App extends Component {
 
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false
+    }
+  }
 
   postEvent() {
     fetch("https://forgetful-elephant.herokuapp.com/events",
@@ -41,8 +47,12 @@ class App extends Component {
           <div className="flex-container">
             <EventContainer />
             <EventInfo />
+            <ReactModal
+              isOpen={this.state.modalOpen}
+            />
           </div>
           <button onClick={this.postEvent}>Post Event</button>
+          <button onClick={() => this.setState({modalOpen: true})}>Create Event</button>
         </div>
       </Provider>
     );

@@ -38,7 +38,6 @@ export const reducer = (state = { events: [], loading: true, selectedEvent: null
     case 'GET_EVENT_DATA_ERROR':
       return state;
     case 'SET_EVENT_INFO':
-    console.log("setting info")
       return {
         ...state,
         selectedEvent: action.data,

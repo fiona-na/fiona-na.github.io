@@ -27,7 +27,7 @@ class EventContainer extends Component {
   }
 
   _handleClick = (event) => {
-    console.log(event)
+    // console.log(event)
     this.props.dispatch({type: 'SET_EVENT_INFO', data: event})
   }
 }

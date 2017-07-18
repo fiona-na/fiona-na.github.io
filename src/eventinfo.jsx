@@ -13,7 +13,7 @@ class EventInfo extends Component {
     return (
       <div className="event-info">
         {event
-          ? <div class="event-details">
+          ? <div className="event-details">
               <h1>{event.title}</h1>
               <p>{event.data}</p>
             </div>

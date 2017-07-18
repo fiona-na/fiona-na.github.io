@@ -2,9 +2,35 @@ h1 {
   color: tomato;
 }
 
-.event-container {
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.event-container {
+  flex: 3 0 0;
+  -webkit-flex: 3 0 0;
+  /*display: flex;*/
   flex-direction: column;
   padding: 10px;
   background-color: orange;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.event-info {
+  /*display: flex;*/
+  flex: 1 0 0;
+  -webkit-flex: 1 0 0;
+  text-align: center;
 }

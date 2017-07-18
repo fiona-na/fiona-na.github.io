@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Event from './event.jsx';
 import EventContainer from './eventcontainer.jsx';
-import EventIndo from './eventinfo.jsx';
+import EventInfo from './eventinfo.jsx';
 import EventForm from './eventform.jsx';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -38,8 +38,10 @@ class App extends Component {
       <Provider store={store}>
         <div>
           <h1>Hello Thalmic!</h1>
-          <EventContainer />
-          <EventInfo />
+          <div className="flex-container">
+            <EventContainer />
+            <EventInfo />
+          </div>
           <button onClick={this.postEvent}>Post Event</button>
         </div>
       </Provider>

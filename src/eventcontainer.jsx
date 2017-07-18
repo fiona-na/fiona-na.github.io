@@ -20,13 +20,17 @@ class EventContainer extends Component {
         {events
         ? <div>
           {events.map((event) =>
-            <Event event={event} key={event.id}/>
+            <Event event={event} key={event.id} handleClick={this.handleClick}/>
           )}
           </div>
         : <p>events loading</p>
         }
       </div>
       )
+  }
+
+  handleClick = (event) => {
+    console.log(event)
   }
 }
 

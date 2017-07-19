@@ -8,6 +8,11 @@ import { connect } from 'react-redux';
   )
 
 class EventInfo extends Component {
+
+  _deleteEvent = () => {
+    this.props.dispatch({type: 'DELETE_EVENT_BY_ID', data: this.props.event.id})
+  }
+
   render() {
     const { event } = this.props;
     return (
@@ -16,11 +21,15 @@ class EventInfo extends Component {
           ? <div className="event-details">
               <h1>{event.title}</h1>
               <p>{event.data}</p>
+              <button onClick={this._deleteEvent}>
+                Delete
+              </button>
             </div>
           : <p>No event Selected</p>
         }
       </div>
       )
+
   }
 }
 

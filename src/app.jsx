@@ -36,6 +36,7 @@ class App extends Component {
         })
       }).then((res) => {
         console.log("worked:", res)
+        store.dispatch({type: "GET_EVENT_DATA"})
       })
   }
 
@@ -49,6 +50,7 @@ class App extends Component {
             <EventInfo />
             <ReactModal
               isOpen={this.state.modalOpen}
+              shouldCloseOnOverlayClick={false}
             />
           </div>
           <button onClick={this.postEvent}>Post Event</button>

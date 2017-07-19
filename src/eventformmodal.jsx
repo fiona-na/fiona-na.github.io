@@ -22,6 +22,7 @@ class EventFormModal extends Component {
   }
 
   showResults = (values) => {
+    const newEvent = Object.assign(values, {timestamp: Date.now().toString()})
     this.props.dispatch({type: 'ADD_NEW_EVENT', data: values})
     // console.log("results here", JSON.stringify(values, null, 2))
   }

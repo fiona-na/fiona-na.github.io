@@ -6,9 +6,9 @@ const validate = values => {
   if (!values.title) {
     errors.title = 'Required'
   }
-  // if (!values.data) {
-  //   errors.data = 'Required'
-  // }
+  if (!values.data) {
+    errors.data = 'Required'
+  }
   if (!values.icon) {
     errors.icon = 'Required'
   }
@@ -31,18 +31,30 @@ const renderField = ({ input, label, type, meta: { touched, error} }) => (
   </div>
 )
 
+const renderDataField = ({ input, label, type, meta: { touched, error} }) => (
+  <div>
+    <label>{label}</label>
+    <div>
+      <Field name="data" component="textarea" />
+      {touched && ((error && <span>{error}</span>))}
+    </div>
+  </div>
+)
+
 const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
   <div>
     <label>{label}</label>
-    <Field name="type" component="select">
-      <option />
-      <option >Meetup</option>
-      <option >Entertainment</option>
-      <option >Lunch & Learn</option>
-      <option >Party</option>
-      <option >Other</option>
-    </Field>
-    {touched && ((error && <span>{error}</span>))}
+    <div>
+      <Field name="type" component="select">
+        <option />
+        <option >Meetup</option>
+        <option >Entertainment</option>
+        <option >Lunch & Learn</option>
+        <option >Party</option>
+        <option >Other</option>
+      </Field>
+      {touched && ((error && <span>{error}</span>))}
+    </div>
   </div>
 )
 
@@ -51,9 +63,9 @@ const SyncValidationForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Field name="title" type="text" component={renderField} label="Title"/>
-      <Field name="data" component="textarea" label="Description"/>
       <Field name="icon" type="text" component={renderField} label="Icon URL"/>
       <Field name="type" component={renderSelectField} label="Type" />
+      <Field name="data" component={renderDataField} label="Description"/>
 
       <Field name="serviceid" type="text" component={renderField} label="Service ID"/>
       <div>

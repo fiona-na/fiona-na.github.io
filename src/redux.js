@@ -25,6 +25,16 @@ export const apiMiddleware = store => next => action => {
           store.dispatch({type:'GET_EVENT_DATA'})
         })
       break;
+    case 'ADD_NEW_EVENT':
+      fetch(API,
+        {
+          method: "POST",
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(action.data)
+        }).then(() => {
+          store.dispatch({type:'GET_EVENT_DATA'})
+        })
+      break;
 
     default:
       break;

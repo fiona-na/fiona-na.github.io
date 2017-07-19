@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { Field, reduxForm } from 'redux-form';
-import SyncValidationForm from './reduxform.jsx'
+import SyncValidationForm from './reduxform.jsx';
+import { connect } from 'react-redux';
+
+@connect()
 
 class EventFormModal extends Component {
   render() {
@@ -19,7 +22,8 @@ class EventFormModal extends Component {
   }
 
   showResults = (values) => {
-    console.log("results here", JSON.stringify(values, null, 2))
+    this.props.dispatch({type: 'ADD_NEW_EVENT', data: values})
+    // console.log("results here", JSON.stringify(values, null, 2))
   }
 
 }

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
   state => ({
     event: state.event.selectedEvent,
   })
-  )
+)
 
 export default class EventInfo extends Component {
 

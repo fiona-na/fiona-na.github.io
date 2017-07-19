@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Event from './event.jsx';
-import EventContainer from './eventcontainer.jsx';
-import EventInfo from './eventinfo.jsx';
-import EventFormModal from './eventformmodal.jsx';
-import ReactModal from 'react-modal';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer } from './redux/index';
 import { apiMiddleware } from './redux/apimiddleware';
+import EventContainer from './eventcontainer.jsx';
+import EventInfo from './eventinfo.jsx';
+import EventFormModal from './eventformmodal.jsx';
 
 //creating store using combined reducer and custom api middleware
 const store = createStore(reducer, applyMiddleware(apiMiddleware))
@@ -15,7 +13,7 @@ const store = createStore(reducer, applyMiddleware(apiMiddleware))
 //dispatch get event data to load up events from backend on load
 store.dispatch({type: 'GET_EVENT_DATA'})
 
-class App extends Component {
+export default class App extends Component {
 
   //set default modal state to closed
   constructor(props) {
@@ -58,4 +56,3 @@ class App extends Component {
     );
   }
 }
-export default App;

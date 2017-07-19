@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 //Grab events and loading info from store
 @connect((state) => {
-    return {
-      events: state.event.events,
-      loading: state.event.loading
-    };
-  })
+  return {
+    events: state.event.events,
+    loading: state.event.loading
+  };
+})
 
 export default class EventContainer extends Component {
   render() {

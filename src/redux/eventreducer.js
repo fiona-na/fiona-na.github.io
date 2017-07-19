@@ -1,6 +1,8 @@
-//Event reducer with a default state of empty events and no event selected
+//Event reducer with a default state of empty events
+//and no event selected
 
-export const eventReducer = (state = { events: [], loading: true, selectedEvent: null }, action) => { //default state
+//set default state
+export const eventReducer = (state = { events: [], loading: true, selectedEvent: null }, action) => {
   switch (action.type) {
     case 'GET_EVENT_DATA_LOADING':
       //the state can know when its loading events

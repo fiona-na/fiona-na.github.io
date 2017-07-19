@@ -1,5 +1,5 @@
-//API middleware, all actions that make request to API backend
-//goes here
+//API middleware, all actions that make request to
+//API backend goes here
 
 const API = 'https://forgetful-elephant.herokuapp.com/events';
 

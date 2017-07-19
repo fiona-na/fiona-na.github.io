@@ -23,6 +23,9 @@ class EventFormModal extends Component {
 
   showResults = (values) => {
     const newEvent = Object.assign(values, {timestamp: Date.now().toString()})
+    if (!newEvent.icon) {
+      newEvent.icon = "https://www.trashedgraphics.com/images/default_icon.png"
+    }
     this.props.dispatch({type: 'ADD_NEW_EVENT', data: values})
     // console.log("results here", JSON.stringify(values, null, 2))
   }

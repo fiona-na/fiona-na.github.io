@@ -9,9 +9,9 @@ const validate = values => {
   if (!values.data) {
     errors.data = 'Required'
   }
-  if (!values.icon) {
-    errors.icon = 'Required'
-  }
+  // if (!values.icon) {
+  //   errors.icon = 'Required'
+  // }
   if (!values.type) {
     errors.type = 'Required'
   }
@@ -66,7 +66,6 @@ const SyncValidationForm = (props) => {
       <Field name="icon" type="text" component={renderField} label="Icon URL"/>
       <Field name="type" component={renderSelectField} label="Type" />
       <Field name="data" component={renderDataField} label="Description"/>
-
       <Field name="serviceid" type="text" component={renderField} label="Service ID"/>
       <div>
         <button type="submit" disabled={submitting}>Submit</button>

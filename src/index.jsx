@@ -1,4 +1,5 @@
-require("../styles/application.scss");
+//get all the styling
+require('../styles/application.scss');
 
 // Render the top-level React component
 import React from 'react';

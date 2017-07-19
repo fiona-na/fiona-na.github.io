@@ -6,14 +6,18 @@ import EventFormModal from './eventformmodal.jsx';
 import ReactModal from 'react-modal';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { reducer, apiMiddleware } from './redux'
+import { reducer } from './redux/index';
+import { apiMiddleware } from './redux/apimiddleware';
 
+//creating store using combined reducer and custom api middleware
 const store = createStore(reducer, applyMiddleware(apiMiddleware))
 
-store.dispatch({type: "GET_EVENT_DATA"})
+//dispatch get event data to load up events from backend on load
+store.dispatch({type: 'GET_EVENT_DATA'})
 
 class App extends Component {
 
+  //set default modal state to closed
   constructor(props) {
     super(props);
     this.state = {
@@ -21,24 +25,7 @@ class App extends Component {
     }
   }
 
-  postEvent() {
-    fetch("https://forgetful-elephant.herokuapp.com/events",
-      {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          type: "Meetup",
-          icon: "https://cdn3.iconfinder.com/data/icons/social-media-chat-1/512/MeetUp-128.png",
-          serviceId: "THL001",
-          timestamp: Date.now().toString(),
-          title: "Thalmic Meetup",
-          data: "Come for an amazing afternoon of wearable technology fun!"
-        })
-      }).then((res) => {
-        store.dispatch({type: "GET_EVENT_DATA"})
-      })
-  }
-
+  //handle opening and closing modal
   _handleOpenModal () {
     this.setState({ modalOpen: true });
   }
@@ -47,6 +34,9 @@ class App extends Component {
     this.setState({ modalOpen: false });
   }
 
+  //provide store to all components, and render 3 main
+  //components, Event container, Event info Sidebar,
+  //and event form modal
   render() {
     const { modalOpen } = this.state;
     return (
@@ -62,7 +52,6 @@ class App extends Component {
               handleClose={this._handleCloseModal.bind(this)}
             />
           </div>
-          <button onClick={this.postEvent}>Post Event</button>
           <button onClick={this._handleOpenModal.bind(this)}>Create Event</button>
         </div>
       </Provider>

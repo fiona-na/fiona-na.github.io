@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-class Event extends Component {
+//simple component, just make the individual event boxes
+export default class Event extends Component {
   render() {
   const { type, serviceId, icon, timestamp, title, data } = this.props.event;
     return (
@@ -12,5 +13,3 @@ class Event extends Component {
       )
   }
 }
-
-export default Event

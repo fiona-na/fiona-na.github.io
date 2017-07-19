@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//connect to store and grab
+//selected event info for sidebar
 @connect(
   state => ({
     event: state.event.selectedEvent,
   })
   )
 
-class EventInfo extends Component {
+export default class EventInfo extends Component {
 
+  //function for handling the delete button
   _deleteEvent = () => {
     this.props.dispatch({type: 'DELETE_EVENT_BY_ID', data: this.props.event.id})
   }
 
+  //check if there is an event selected,
+  //if none display appropriate message
+  //else display event info
   render() {
     const { event } = this.props;
     return (
@@ -32,5 +38,3 @@ class EventInfo extends Component {
 
   }
 }
-
-export default EventInfo

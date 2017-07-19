@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Event from './event.jsx'
 import { connect } from 'react-redux';
 
+//Grab events and loading info from store
 @connect((state) => {
     return {
       events: state.event.events,
@@ -9,9 +10,13 @@ import { connect } from 'react-redux';
     };
   })
 
-class EventContainer extends Component {
+export default class EventContainer extends Component {
   render() {
     const { events } = this.props;
+
+    //check if events exists if it does,
+    //map through each one and print it,
+    //otherwise tell user we are loading
     return (
       <div className="event-container">
         {events
@@ -26,10 +31,8 @@ class EventContainer extends Component {
       )
   }
 
+  //function handles clicks by setting sidebar info
   _handleClick = (event) => {
-    // console.log(event)
     this.props.dispatch({type: 'SET_EVENT_INFO', data: event})
   }
 }
-
-export default EventContainer

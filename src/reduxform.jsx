@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+//simple form validation made easy with redux form
 const validate = values => {
   const errors = {}
   if (!values.title) {
@@ -9,9 +10,6 @@ const validate = values => {
   if (!values.data) {
     errors.data = 'Required'
   }
-  // if (!values.icon) {
-  //   errors.icon = 'Required'
-  // }
   if (!values.type) {
     errors.type = 'Required'
   }
@@ -21,6 +19,7 @@ const validate = values => {
   return errors
 }
 
+//renders input fields with label and errors
 const renderField = ({ input, label, type, meta: { touched, error} }) => (
   <div>
     <label>{label}</label>
@@ -31,6 +30,8 @@ const renderField = ({ input, label, type, meta: { touched, error} }) => (
   </div>
 )
 
+//same as previous render, but textarea and select fields
+//require more customization
 const renderDataField = ({ input, label, type, meta: { touched, error} }) => (
   <div>
     <label>{label}</label>
@@ -58,6 +59,7 @@ const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
   </div>
 )
 
+//actual form that will render field component based on field
 const SyncValidationForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
@@ -76,8 +78,8 @@ const SyncValidationForm = (props) => {
 }
 
 export default reduxForm({
-  form: 'syncValidation',  // a unique identifier for this form
-  validate                // <--- validation function given to redux-form
+  form: 'syncValidation',
+  validate     // magical validation of redux-form
 })(SyncValidationForm)
 
 

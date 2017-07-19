@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 @connect((state) => {
     return {
-      events: state.events,
-      loading: state.loading
+      events: state.event.events,
+      loading: state.event.loading
     };
   })
 

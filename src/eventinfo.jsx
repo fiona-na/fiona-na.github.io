@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 @connect(
   state => ({
-    event: state.selectedEvent,
+    event: state.event.selectedEvent,
   })
   )
 

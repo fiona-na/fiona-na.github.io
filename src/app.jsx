@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Event from './event.jsx';
 import EventContainer from './eventcontainer.jsx';
 import EventInfo from './eventinfo.jsx';
-import EventForm from './eventform.jsx';
+import EventFormModal from './eventformmodal.jsx';
 import ReactModal from 'react-modal';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer, apiMiddleware } from './redux'
 
-const store = createStore(reducer, {}, applyMiddleware(apiMiddleware))
+const store = createStore(reducer, applyMiddleware(apiMiddleware))
 
 store.dispatch({type: "GET_EVENT_DATA"})
 
@@ -56,7 +56,7 @@ class App extends Component {
           <div className="flex-container">
             <EventContainer />
             <EventInfo />
-            <EventForm
+            <EventFormModal
               open={modalOpen}
               handleOpen={this._handleOpenModal.bind(this)}
               handleClose={this._handleCloseModal.bind(this)}

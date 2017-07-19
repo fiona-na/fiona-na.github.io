@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
+import { Field, reduxForm } from 'redux-form';
+import SyncValidationForm from './reduxform.jsx'
 
-class EventForm extends Component {
+class EventFormModal extends Component {
   render() {
     const { open, handleClose, handleOpen } = this.props;
     return (
@@ -11,10 +13,15 @@ class EventForm extends Component {
         onRequestClose={handleClose}
         shouldCloseOnOverlayClick={true}
       >
-      Hello!
+        <SyncValidationForm onSubmit={this.showResults}/>
       </ReactModal>
     )
   }
+
+  showResults = (values) => {
+    console.log("results here", JSON.stringify(values, null, 2))
+  }
+
 }
 
-export default EventForm
+export default EventFormModal

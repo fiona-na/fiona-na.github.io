@@ -35,12 +35,20 @@ class App extends Component {
           data: "Come for an amazing afternoon of wearable technology fun!"
         })
       }).then((res) => {
-        console.log("worked:", res)
         store.dispatch({type: "GET_EVENT_DATA"})
       })
   }
 
+  _handleOpenModal () {
+    this.setState({ modalOpen: true });
+  }
+
+  _handleCloseModal () {
+    this.setState({ modalOpen: false });
+  }
+
   render() {
+    const { modalOpen } = this.state;
     return (
       <Provider store={store}>
         <div>
@@ -48,13 +56,14 @@ class App extends Component {
           <div className="flex-container">
             <EventContainer />
             <EventInfo />
-            <ReactModal
-              isOpen={this.state.modalOpen}
-              shouldCloseOnOverlayClick={false}
+            <EventForm
+              open={modalOpen}
+              handleOpen={this._handleOpenModal.bind(this)}
+              handleClose={this._handleCloseModal.bind(this)}
             />
           </div>
           <button onClick={this.postEvent}>Post Event</button>
-          <button onClick={() => this.setState({modalOpen: true})}>Create Event</button>
+          <button onClick={this._handleOpenModal.bind(this)}>Create Event</button>
         </div>
       </Provider>
     );

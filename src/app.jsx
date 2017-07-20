@@ -52,12 +52,12 @@ export default class App extends Component {
           <div className="flex-container">
             <EventContainer/>
             <EventInfo/>
-            <EventFormModal
-              open={modalOpen}
-              handleOpen={this._handleOpenModal.bind(this)}
-              handleClose={this._handleCloseModal.bind(this)}
-            />
           </div>
+          <EventFormModal
+            open={modalOpen}
+            handleOpen={this._handleOpenModal.bind(this)}
+            handleClose={this._handleCloseModal.bind(this)}
+          />
         </div>
       </Provider>
     );

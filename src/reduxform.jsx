@@ -26,11 +26,11 @@ const validate = values => {
 
 //renders input fields with label and errors
 const renderField = ({ input, label, type, meta: { touched, error} }) => (
-  <div>
+  <div className="form-field">
     <label>{label}</label>
     <div>
       <input {...input} placeholder={label} type={type} />
-      { touched && error && <span>{error}</span> }
+      { touched && error && <span className="field-err">{error}</span> }
     </div>
   </div>
 )
@@ -38,17 +38,17 @@ const renderField = ({ input, label, type, meta: { touched, error} }) => (
 //same as previous render, but textarea and select fields
 //require more customization
 const renderDataField = ({ input, label, type, meta: { touched, error} }) => (
-  <div>
+  <div className="form-field">
     <label>{label}</label>
     <div>
       <Field name="data" component="textarea" />
-      { touched && error && <span>{error}</span> }
+      { touched && error && <span className="field-err">{error}</span> }
     </div>
   </div>
 )
 
 const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
-  <div>
+  <div className="form-field">
     <label>{label}</label>
     <div>
       <Field name="type" component="select">
@@ -59,7 +59,7 @@ const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
         <option>Party</option>
         <option>Other</option>
       </Field>
-      { touched && error && <span>{error}</span> }
+      { touched && error && <span className="field-err">{error}</span> }
     </div>
   </div>
 )
@@ -70,13 +70,13 @@ const SyncValidationForm = (props) => {
   //set global list of ids to access from validations
   listOfServiceIds = serviceIds;
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="event-form" onSubmit={handleSubmit}>
       <Field name="title" type="text" component={renderField} label="Title"/>
       <Field name="icon" type="text" component={renderField} label="Icon URL"/>
       <Field name="type" component={renderSelectField} label="Type" />
       <Field name="data" component={renderDataField} label="Description"/>
       <Field name="serviceid" type="text" component={renderField} label="Service ID"/>
-      <div>
+      <div className="form-field">
         <button type="submit" disabled={submitting}>Submit</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
       </div>

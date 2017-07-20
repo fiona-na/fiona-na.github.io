@@ -1,18 +1,16 @@
 .modal {
   @include flexbox;
   @include flexdirection(column);
-  @include transition(0.8s);
+  @include transition(0.5s);
   opacity: 0;
   align-items: center;
-  position: absolute;
-  top: 25px;
-  right: 40px;
-  bottom: 40px;
-  left: 40px;
+  justify-content: center;
   background-color: $modal-bg-color;
   outline: none;
   border: 2px solid $modal-border-color;
   border-radius: 10px;
+  padding-bottom: 40px;
+  margin: 0 20px 0 20px;
 
   h1 {
     color: $modal-title-color;
@@ -36,6 +34,30 @@
 }
 
 .modal_before-close {
-  opacity: 0;
 
+}
+.event-form {
+  text-align: center;
+
+  input, textarea {
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  input, textarea, select {
+    width: 300px;
+  }
+
+  textarea {
+    height: 70px;
+  }
+
+  .form-field {
+    margin: 5px 0 0 0;
+  }
+
+  .field-err {
+    color: red;
+    display: block;
+  }
 }

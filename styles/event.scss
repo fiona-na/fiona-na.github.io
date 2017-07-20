@@ -8,6 +8,8 @@
   text-align: center;
   align-items: center;
   justify-content: space-between;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
 
 
   img {
@@ -36,4 +38,14 @@
     order: 3;
   }
 
+}
+
+.event-box:hover {
+  background-color: green;
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
+}
+
+.selected-event {
+  background-color: green;
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
 }

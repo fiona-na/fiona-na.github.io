@@ -26,6 +26,7 @@ export default class EventInfo extends Component {
         {
           event
           ? <div className="event-details">
+              <img src={event.icon} width="150" height="150"/>
               <h1>{event.title}</h1>
               <p>{event.data}</p>
               <button onClick={this._deleteEvent}>

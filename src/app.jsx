@@ -42,8 +42,8 @@ export default class App extends Component {
         <div>
           <h1>Hello Thalmic!</h1>
           <div className="flex-container">
-            <EventContainer />
-            <EventInfo />
+            <EventContainer/>
+            <EventInfo/>
             <EventFormModal
               open={modalOpen}
               handleOpen={this._handleOpenModal.bind(this)}

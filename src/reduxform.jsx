@@ -1,6 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+//global list of service ids for validation checking
+let listOfServiceIds;
+
 //simple form validation made easy with redux form
 const validate = values => {
   const errors = {};
@@ -15,6 +18,8 @@ const validate = values => {
   }
   if (!values.serviceid) {
     errors.serviceid = 'Required';
+  } else if (listOfServiceIds.includes(values.serviceid.toString())){
+    errors.serviceid = 'Service ID is already in use';
   }
   return errors;
 }
@@ -61,7 +66,9 @@ const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
 
 //actual form that will render field component based on field
 const SyncValidationForm = (props) => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, pristine, reset, submitting, serviceIds } = props
+  //set global list of ids to access from validations
+  listOfServiceIds = serviceIds;
   return (
     <form onSubmit={handleSubmit}>
       <Field name="title" type="text" component={renderField} label="Title"/>

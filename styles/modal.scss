@@ -1,0 +1,41 @@
+.modal {
+  @include flexbox;
+  @include flexdirection(column);
+  @include transition(0.8s);
+  opacity: 0;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+  background-color: $modal-bg-color;
+  outline: none;
+  border: 2px solid $modal-border-color;
+  border-radius: 10px;
+
+  h1 {
+    color: $modal-title-color;
+  }
+
+  .close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+  }
+
+  .close-modal-btn:hover {
+    box-shadow: none;
+  }
+}
+
+.modal_after-open {
+  opacity: 1;
+  transform: translateY(15px);
+}
+
+.modal_before-close {
+  opacity: 0;
+
+}

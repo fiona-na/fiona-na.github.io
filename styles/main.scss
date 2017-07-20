@@ -14,17 +14,14 @@ body {
 
   .header {
     @include flexmix(0, 1, auto);
+    @include flexbox;
     background-color: $header-bg-color;
+    align-items: center;
 
     .page-title {
-      display: inline-block;
       margin: 20px;
       color: $title-color;
       font-family: $title-font;
-    }
-
-    .create-btn {
-      display: inline-block;
     }
   }
 

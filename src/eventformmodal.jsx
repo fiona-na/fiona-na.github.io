@@ -35,8 +35,14 @@ export default class EventFormModal extends Component {
         isOpen={open}
         onRequestClose={handleClose}
         shouldCloseOnOverlayClick={true}
+        className={{
+          base: 'modal',
+          afterOpen: 'modal_after-open',
+          beforeClose: 'modal_before-close'
+        }}
       >
         <h1>New Event</h1>
+        <button className="close-modal-btn" onClick={handleClose}>X</button>
         <SyncValidationForm serviceIds={this.state.ids} onSubmit={this._showResults}/>
       </ReactModal>
     );

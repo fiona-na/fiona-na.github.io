@@ -1,0 +1,44 @@
+.event-info {
+  height: 80vh;
+  padding: 10px;
+  @include flexbox;
+  flex: 1 0 0;
+  -webkit-flex: 1 0 0;
+  text-align: center;
+  background-color: red;
+  justify-content: center;
+
+  .event-details {
+    @include flexbox;
+    -webkit-flex-direction: column;
+
+    img {
+      align-self: center;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      max-height: 40%;
+      word-break: break-all;
+      overflow-y: auto;
+    }
+
+    .delete-btn {
+
+    }
+
+    .tags {
+      font-style: italic;
+      margin-top: auto;
+    }
+
+  }
+
+}

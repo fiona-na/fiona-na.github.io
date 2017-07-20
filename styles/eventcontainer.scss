@@ -1,0 +1,10 @@
+.event-container {
+
+  flex: 3 0 0;
+  -webkit-flex: 3 0 0;
+  flex-direction: column;
+  padding: 10px;
+  background-color: orange;
+  height: 80vh;
+  overflow-y: auto;
+}

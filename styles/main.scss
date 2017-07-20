@@ -12,19 +12,4 @@ h1 {
   justify-content: space-around;
 }
 
-.event-container {
 
-  flex: 3 0 0;
-  -webkit-flex: 3 0 0;
-  flex-direction: column;
-  padding: 10px;
-  background-color: orange;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.event-info {
-  flex: 1 0 0;
-  -webkit-flex: 1 0 0;
-  text-align: center;
-}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Event from './event.jsx'
+import Event from './event.jsx';
 import { connect } from 'react-redux';
 
 //Grab events and loading info from store
@@ -19,16 +19,18 @@ export default class EventContainer extends Component {
     //otherwise tell user we are loading
     return (
       <div className="event-container">
-        {events
-        ? <div>
-          {events.map((event) =>
-            <Event event={event} key={event.id} handleClick={this._handleClick}/>
-          )}
-          </div>
-        : <p>events loading</p>
+        {
+          events
+          ? <div>
+            {
+              events.map((event) =>
+                <Event event={event} key={event.id} handleClick={this._handleClick}/>
+            )}
+            </div>
+          : <p>events loading</p>
         }
       </div>
-      )
+    )
   }
 
   //function handles clicks by setting sidebar info

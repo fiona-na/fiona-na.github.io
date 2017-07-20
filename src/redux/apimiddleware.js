@@ -25,7 +25,7 @@ export const apiMiddleware = store => next => action => {
       //to reload page with new event list
       fetch(`${API}/${action.data}`, {method: 'DELETE'})
         .then(() => {
-          store.dispatch({type:'GET_EVENT_DATA'})
+          store.dispatch({type:'GET_EVENT_DATA'});
         })
       break;
     case 'ADD_NEW_EVENT':
@@ -37,11 +37,10 @@ export const apiMiddleware = store => next => action => {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(action.data)
         }).then(() => {
-          store.dispatch({type:'GET_EVENT_DATA'})
+          store.dispatch({type: 'GET_EVENT_DATA'});
         })
       break;
-
     default:
       break;
   }
-};
+}

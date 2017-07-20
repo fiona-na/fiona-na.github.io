@@ -1,8 +1,39 @@
 .event-box {
+  @include flexbox;
   border: solid 1px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
   background-color: blue;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
 
-  h2 {
-    color: red;
+
+  img {
+    order: 1;
+    /*margin-right: 200px;*/
+
   }
+
+  div {
+
+    order: 2;
+
+    h2 {
+      color: red;
+      margin: 0;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+
+  }
+
+  span {
+    order: 3;
+  }
+
 }

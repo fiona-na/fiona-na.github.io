@@ -18,14 +18,14 @@ export default class EventFormModal extends Component {
         onRequestClose={handleClose}
         shouldCloseOnOverlayClick={true}
       >
-        <SyncValidationForm onSubmit={this.showResults}/>
+        <SyncValidationForm onSubmit={this._showResults} />
       </ReactModal>
-    )
+    );
   }
 
   //handles form submission, will dispatch action to make
   //POST request
-  showResults = (values) => {
+  _showResults = (values) => {
     //Assign new event a timestamp with current time
     //and default icon if none given
     const newEvent = Object.assign(values, {timestamp: Date.now().toString()})
@@ -33,7 +33,7 @@ export default class EventFormModal extends Component {
       newEvent.icon = 'https://cdn3.iconfinder.com/data/icons/UltimateGnome/256x256/emblems/emblem-generic.png'
     }
     this.props.handleClose();   //closes modal upon submission
-    this.props.dispatch({type: 'ADD_NEW_EVENT', data: values})
+    this.props.dispatch({type: 'ADD_NEW_EVENT', data: values});
   }
 
 }

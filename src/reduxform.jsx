@@ -3,20 +3,20 @@ import { Field, reduxForm } from 'redux-form';
 
 //simple form validation made easy with redux form
 const validate = values => {
-  const errors = {}
+  const errors = {};
   if (!values.title) {
-    errors.title = 'Required'
+    errors.title = 'Required';
   }
   if (!values.data) {
-    errors.data = 'Required'
+    errors.data = 'Required';
   }
   if (!values.type) {
-    errors.type = 'Required'
+    errors.type = 'Required';
   }
   if (!values.serviceid) {
-    errors.serviceid = 'Required'
+    errors.serviceid = 'Required';
   }
-  return errors
+  return errors;
 }
 
 //renders input fields with label and errors
@@ -24,8 +24,8 @@ const renderField = ({ input, label, type, meta: { touched, error} }) => (
   <div>
     <label>{label}</label>
     <div>
-      <input {...input} placeholder={label} type={type}/>
-      {touched && ((error && <span>{error}</span>))}
+      <input {...input} placeholder={label} type={type} />
+      { touched && error && <span>{error}</span> }
     </div>
   </div>
 )
@@ -37,7 +37,7 @@ const renderDataField = ({ input, label, type, meta: { touched, error} }) => (
     <label>{label}</label>
     <div>
       <Field name="data" component="textarea" />
-      {touched && ((error && <span>{error}</span>))}
+      { touched && error && <span>{error}</span> }
     </div>
   </div>
 )
@@ -47,14 +47,14 @@ const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
     <label>{label}</label>
     <div>
       <Field name="type" component="select">
-        <option />
-        <option >Meetup</option>
-        <option >Entertainment</option>
-        <option >Lunch & Learn</option>
-        <option >Party</option>
-        <option >Other</option>
+        <option/>
+        <option>Meetup</option>
+        <option>Entertainment</option>
+        <option>Lunch & Learn</option>
+        <option>Party</option>
+        <option>Other</option>
       </Field>
-      {touched && ((error && <span>{error}</span>))}
+      { touched && error && <span>{error}</span> }
     </div>
   </div>
 )
@@ -74,7 +74,7 @@ const SyncValidationForm = (props) => {
         <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
       </div>
     </form>
-  )
+  );
 }
 
 export default reduxForm({

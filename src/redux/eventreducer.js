@@ -28,5 +28,5 @@ export const eventReducer = (state = { events: [], loading: true, selectedEvent:
       }
     default:
       return state;
-    }
+  }
 };

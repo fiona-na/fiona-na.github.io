@@ -8,10 +8,10 @@ import EventInfo from './eventinfo.jsx';
 import EventFormModal from './eventformmodal.jsx';
 
 //creating store using combined reducer and custom api middleware
-const store = createStore(reducer, applyMiddleware(apiMiddleware))
+const store = createStore(reducer, applyMiddleware(apiMiddleware));
 
 //dispatch get event data to load up events from backend on load
-store.dispatch({type: 'GET_EVENT_DATA'})
+store.dispatch({type: 'GET_EVENT_DATA'});
 
 export default class App extends Component {
 

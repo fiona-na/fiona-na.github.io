@@ -1,7 +1,7 @@
 .event-info {
   padding: 10px;
   @include flexbox;
-  @include flexmix(1);
+  @include flexmix(1, 0, 0);
   text-align: center;
   background-color: red;
   justify-content: center;
@@ -15,14 +15,20 @@
     }
 
     h1 {
+      color: $sidebar-title-color;
+      font-family: $sidebar-title-font;
       margin-bottom: 0;
     }
 
     h2 {
+      color: $sidebar-type-color;
+      font-family: $sidebar-type-font;
       margin: 0;
     }
 
-    p {
+    .desc-text {
+      font-family: $sidebar-desc-font;
+      color: $sidebar-desc-color;
       max-height: 40%;
       word-break: break-all;
       overflow-y: auto;
@@ -40,7 +46,7 @@
   }
 }
 
-
+/*hide unimportant information on small displays*/
 @media screen and (max-width: 600px) {
   .event-info {
     .side-icon, .date-tag, .id-tag, h1, h2 {

@@ -1,13 +1,15 @@
 .event-container {
-  @include flexmix(4);
+  @include flexmix(4, 0, 0);
   @include flexdirection(column);
   padding: 10px;
   background-color: orange;
   overflow-y: auto;
 }
 
+
+/*re-adjust flex for smaller displays*/
 @media screen and (max-width: 800px) {
   .event-container {
-    @include flexmix(3);
+    @include flexmix(3, 0, 0);
   }
 }

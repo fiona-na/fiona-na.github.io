@@ -1,13 +1,5 @@
-h1 {
-  color: $title-color;
-}
-
-@media screen and (max-width: 600px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
-
+/*make app use 100% of screen space for
+cleaner look*/
 html,
 body {
   height: 100%;
@@ -20,12 +12,13 @@ body {
   height: 100vh;
 
   .header {
-    flex: 0 1 auto;
+    @include flexmix(0, 1, auto)
     background-color: $header-bg-color;
 
     .page-title {
       display: inline-block;
       margin: 20px;
+      color: $title-color;
     }
 
     .create-btn {
@@ -37,11 +30,22 @@ body {
   .flex-container {
     @include flexbox;
     flex: 1 2 auto;
+    -moz-flex: 1 2 auto;
     padding: 0;
     margin: 0;
   }
 }
 
+/*implements responsive design, reorganizes components
+when on smaller screen*/
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/*button styling here, button styles are kept consistent
+throughout webpage*/
 button {
   @include transition(0.3s);
   border: 2px solid $btn-border;

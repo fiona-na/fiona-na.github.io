@@ -7,13 +7,15 @@
   display: flex;
 }
 
-@mixin flexmix($flex) {
-  -webkit-flex: $flex 0 0;
-  flex: $flex 0 0;
+@mixin flexmix($grow, $shrink, $basis) {
+  -webkit-flex: $grow $shrink $basis;
+  -moz-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
 }
 
 @mixin flexdirection($direction) {
   -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
   flex-direction: $direction;
 }
 

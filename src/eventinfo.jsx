@@ -35,7 +35,7 @@ export default class EventInfo extends Component {
               />
               <h1>{event.title}</h1>
               <h2>{event.type}</h2>
-              <p>{event.data}</p>
+              <p className="desc-text">{event.data}</p>
               <div className="tags">
                 <button className="delete-btn" onClick={this._deleteEvent}>
                   Delete

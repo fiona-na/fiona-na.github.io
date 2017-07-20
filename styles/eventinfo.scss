@@ -37,10 +37,12 @@
     .tags {
       font-style: italic;
       margin-top: auto;
+      color: $sidebar-tag-color;
     }
   }
 
   .no-event {
+    color: $sidebar-none-text-color;
     align-self: center;
     font-style: italic;
   }

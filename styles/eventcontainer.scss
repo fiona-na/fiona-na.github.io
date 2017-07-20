@@ -4,6 +4,7 @@
   padding: 10px;
   background-color: $event-container-bg-color;
   overflow-y: auto;
+  border-top-right-radius: 10px;
 }
 
 
@@ -11,5 +12,11 @@
 @media screen and (max-width: 800px) {
   .event-container {
     @include flexmix(3, 0, 0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .event-container {
+    border-top-right-radius: 0;
   }
 }

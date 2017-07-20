@@ -44,7 +44,7 @@ export default class EventInfo extends Component {
                 <p className="date-tag">Posted: {new Date(parseInt(event.timestamp, 10)).toString()}</p>
               </div>
             </div>
-          : <p className="no-event">No event Selected</p>
+          : <p className="no-event">No Event Selected</p>
         }
       </div>
     );

@@ -1,33 +1,47 @@
 /*use this file to tweak style settings to your
 personal preference*/
 
-
+/*custom colors I found online and liked*/
+$clean: #DFDCE3; /*greyish*/
+$sunshine: #F7B733;
+$evening: #262228;
+$charcoal: #373737;
+$teal: #E37222;
+$paper: #F4F4F4;
+$dusty: #96858F;
+$lavender: #6D7993;
+$overcast: #9099A2;
+$void: #0E0B16;
+$tangerine: #F19F4D;
+$apricot: #F7882F;
 
 /*COLORS*/
 
 /*header*/
-$title-color: tomato;
-$header-bg-color: red;
+$title-color: $sunshine;
+$header-bg-color: $dusty;
 
 /*buttons*/
-$btn-color: red;
-$btn-hovered: blue;
-$btn-border: darkgreen;
-$btn-text-color: grey;
+$btn-color: $apricot;
+$btn-hovered: $tangerine;
+$btn-border: $apricot;
+$btn-text-color: $paper;
 
 /*events*/
-$event-container-bg-color: blue;
-$event-bg-color: green;
-$event-border: black;
-$event-hovered: blue;
-$event-title-color: red;
-$event-type-color: red;
+$event-container-bg-color: $paper;
+$event-bg-color: $lavender;
+$event-border: $charcoal;
+$event-hovered: $clean;
+$event-title-color: $evening;
+$event-type-color: $charcoal;
 
 /*sidebar*/
-$sidebar-bg-color: red;
-$sidebar-title-color: blue;
-$sidebar-type-color: blue;
-$sidebar-desc-color: blue;
+$sidebar-bg-color: $dusty;
+$sidebar-title-color: $void;
+$sidebar-type-color: $evening;
+$sidebar-desc-color: $evening;
+$sidebar-tag-color: $charcoal;
+$sidebar-none-text-color: $charcoal;
 
 /*FONTS*/
 

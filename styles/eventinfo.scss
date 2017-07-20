@@ -9,6 +9,11 @@
   .event-details {
     @include flexbox;
     @include flexdirection(column);
+    background-color: $sidebar-details-bg-color;
+    padding: 20px;
+    border: 2px solid $sidebar-details-border-color;
+    border-radius: 10px;
+    width: 100%;
 
     img {
       align-self: center;

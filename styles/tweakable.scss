@@ -9,6 +9,7 @@ $charcoal: #373737;
 $teal: #E37222;
 $paper: #F4F4F4;
 $dusty: #96858F;
+$less-dusty: #AD9FA7;
 $lavender: #6D7993;
 $overcast: #9099A2;
 $void: #0E0B16;
@@ -37,6 +38,8 @@ $event-type-color: $charcoal;
 
 /*sidebar*/
 $sidebar-bg-color: $dusty;
+$sidebar-details-bg-color: $less-dusty;
+$sidebar-details-border-color: $charcoal;
 $sidebar-title-color: $void;
 $sidebar-type-color: $evening;
 $sidebar-desc-color: $evening;

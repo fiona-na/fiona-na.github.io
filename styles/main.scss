@@ -8,7 +8,7 @@ body {
 
 .page {
   @include flexbox;
-  flex-direction: column;
+  @include flexdirection(column);
   height: 100vh;
 
   .header {
@@ -19,18 +19,17 @@ body {
       display: inline-block;
       margin: 20px;
       color: $title-color;
+      font-family: $title-font;
     }
 
     .create-btn {
       display: inline-block;
-      padding-bottom: 20px;
     }
   }
 
   .flex-container {
     @include flexbox;
-    flex: 1 2 auto;
-    -moz-flex: 1 2 auto;
+    @include flexmix(1, 2, auto)
     padding: 0;
     margin: 0;
   }
@@ -40,7 +39,7 @@ body {
 when on smaller screen*/
 @media screen and (max-width: 600px) {
   .flex-container {
-    flex-direction: column;
+    @include flexdirection(column);
   }
 }
 
@@ -49,19 +48,26 @@ throughout webpage*/
 button {
   @include transition(0.3s);
   border: 2px solid $btn-border;
-  border-radius: 6px;
+  border-radius: 4px;
   margin: 2px;
   background-color: $btn-color;
   height: 30px;
   width: 80px;
-  color: white;
+  color: $btn-text-color;
+  font-family: $btn-text-font;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   outline: none;
+  cursor: pointer;
 }
 
-button:hover {
+button:hover:enabled {
   background-color: $btn-hovered;
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

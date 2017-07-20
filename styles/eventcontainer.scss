@@ -2,7 +2,7 @@
   @include flexmix(4, 0, 0);
   @include flexdirection(column);
   padding: 10px;
-  background-color: orange;
+  background-color: $event-container-bg-color;
   overflow-y: auto;
 }
 

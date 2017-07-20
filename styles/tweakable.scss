@@ -1,6 +1,8 @@
 /*use this file to tweak style settings to your
 personal preference*/
 
+
+
 /*COLORS*/
 
 /*header*/
@@ -11,20 +13,28 @@ $header-bg-color: red;
 $btn-color: red;
 $btn-hovered: blue;
 $btn-border: darkgreen;
+$btn-text-color: grey;
 
 /*events*/
-$event-color: green;
+$event-container-bg-color: blue;
+$event-bg-color: green;
 $event-border: black;
 $event-hovered: blue;
 $event-title-color: red;
 $event-type-color: red;
 
 /*sidebar*/
+$sidebar-bg-color: red;
 $sidebar-title-color: blue;
 $sidebar-type-color: blue;
 $sidebar-desc-color: blue;
 
 /*FONTS*/
-$sidebar-title-font: cursive;
-$sidebar-type-font: cursive;
+
+$title-font: arial;
+$btn-text-font: arial;
+$eventbox-title-font: arial;
+$eventbox-type-font: arial;
+$sidebar-title-font: arial;
+$sidebar-type-font: arial;
 $sidebar-desc-font: cursive;

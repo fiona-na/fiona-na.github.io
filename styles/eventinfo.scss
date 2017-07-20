@@ -3,7 +3,7 @@
   @include flexbox;
   @include flexmix(1, 0, 0);
   text-align: center;
-  background-color: red;
+  background-color: $sidebar-bg-color;
   justify-content: center;
 
   .event-details {

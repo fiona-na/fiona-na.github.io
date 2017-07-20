@@ -7,3 +7,19 @@
   display: flex;
 }
 
+@mixin flexmix($flex) {
+  -webkit-flex: $flex 0 0;
+  flex: $flex 0 0;
+}
+
+@mixin flexdirection($direction) {
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin transition($duration...) {
+  -moz-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  -webkit-transition-duration: $duration;
+  transition-duration: $duration;
+}

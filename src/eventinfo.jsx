@@ -27,7 +27,12 @@ export default class EventInfo extends Component {
         {
           event
           ? <div className="event-details">
-              <img src={event.icon} width="150" height="150"/>
+              <img
+                className="side-icon"
+                src={event.icon}
+                width="150"
+                height="150"
+              />
               <h1>{event.title}</h1>
               <h2>{event.type}</h2>
               <p>{event.data}</p>
@@ -39,7 +44,7 @@ export default class EventInfo extends Component {
                 <p className="date-tag">Posted: {new Date(parseInt(event.timestamp, 10)).toString()}</p>
               </div>
             </div>
-          : <p>No event Selected</p>
+          : <p className="no-event">No event Selected</p>
         }
       </div>
     );

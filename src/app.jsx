@@ -39,9 +39,16 @@ export default class App extends Component {
     const { modalOpen } = this.state;
     return (
       <Provider store={store}>
-        <div>
-          <h1 className="page-title">Eventy</h1>
-          <button className="create-btn" onClick={this._handleOpenModal.bind(this)}>Create</button>
+        <div className="page">
+          <div className="header">
+            <h1 className="page-title">Eventy</h1>
+            <button
+              className="create-btn"
+              onClick={this._handleOpenModal.bind(this)}
+            >
+              Create
+            </button>
+          </div>
           <div className="flex-container">
             <EventContainer/>
             <EventInfo/>

@@ -1,43 +1,63 @@
 h1 {
-  color: tomato;
+  color: $title-color;
 }
 
-.flex-container {
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
 
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+.page {
   @include flexbox;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  flex-direction: column;
+  height: 100vh;
 
-  justify-content: space-around;
-}
+  .header {
+    flex: 0 1 auto;
+    background-color: $header-bg-color;
 
-.page-title {
-  display: inline-block;
-  margin: 20px;
-}
+    .page-title {
+      display: inline-block;
+      margin: 20px;
+    }
 
-.create-btn {
-  display: inline-block;
-  padding-bottom: 20px;
+    .create-btn {
+      display: inline-block;
+      padding-bottom: 20px;
+    }
+  }
+
+  .flex-container {
+    @include flexbox;
+    flex: 1 2 auto;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 button {
-  border: 2px solid darkgreen;
+  @include transition(0.3s);
+  border: 2px solid $btn-border;
   border-radius: 6px;
   margin: 2px;
-  background-color: #4CAF50; /* Green */
+  background-color: $btn-color;
   height: 30px;
   width: 80px;
   color: white;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  -webkit-transition-duration: 0.2s; /* Safari */
-  transition-duration: 0.2s;
+  outline: none;
 }
 
 button:hover {
-  background-color: orange; /* Green */
+  background-color: $btn-hovered;
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
 }

@@ -1,10 +1,13 @@
 .event-container {
-
-  flex: 3 0 0;
-  -webkit-flex: 3 0 0;
-  flex-direction: column;
+  @include flexmix(4);
+  @include flexdirection(column);
   padding: 10px;
   background-color: orange;
-  height: 85vh;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .event-container {
+    @include flexmix(3);
+  }
 }

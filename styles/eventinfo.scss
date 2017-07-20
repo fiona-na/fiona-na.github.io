@@ -1,16 +1,14 @@
 .event-info {
-  height: 85vh;
   padding: 10px;
   @include flexbox;
-  flex: 1 0 0;
-  -webkit-flex: 1 0 0;
+  @include flexmix(1);
   text-align: center;
   background-color: red;
   justify-content: center;
 
   .event-details {
     @include flexbox;
-    -webkit-flex-direction: column;
+    @include flexdirection(column);
 
     img {
       align-self: center;
@@ -34,7 +32,20 @@
       font-style: italic;
       margin-top: auto;
     }
-
   }
 
+  .no-event {
+    align-self: center;
+    font-style: italic;
+  }
 }
+
+
+@media screen and (max-width: 600px) {
+  .event-info {
+    .side-icon, .date-tag, .id-tag, h1, h2 {
+      display: none;
+    }
+  }
+}
+

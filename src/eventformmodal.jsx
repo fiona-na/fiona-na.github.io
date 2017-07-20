@@ -36,6 +36,7 @@ export default class EventFormModal extends Component {
         onRequestClose={handleClose}
         shouldCloseOnOverlayClick={true}
       >
+        <h1>New Event</h1>
         <SyncValidationForm serviceIds={this.state.ids} onSubmit={this._showResults}/>
       </ReactModal>
     );

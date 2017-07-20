@@ -1,15 +1,14 @@
 .event-box {
   @include flexbox;
-  border: solid 1px;
+  @include transition(0.3s);
+  border: 1px solid $event-border;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
-  background-color: blue;
+  background-color: $event-color;
   text-align: center;
   align-items: center;
   justify-content: space-between;
-  -webkit-transition-duration: 0.2s; /* Safari */
-  transition-duration: 0.2s;
 
 
   img {
@@ -41,11 +40,10 @@
 }
 
 .event-box:hover {
-  background-color: green;
-  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
+  background-color: $event-hovered;
 }
 
 .selected-event {
-  background-color: green;
+  background-color: $event-hovered;
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
 }

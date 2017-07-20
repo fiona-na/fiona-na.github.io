@@ -13,7 +13,7 @@ body {
   height: 100vh;
 
   .header {
-    @include flexmix(0, 1, auto)
+    @include flexmix(0, 1, auto);
     background-color: $header-bg-color;
 
     .page-title {
@@ -30,7 +30,7 @@ body {
 
   .flex-container {
     @include flexbox;
-    @include flexmix(1, 2, auto)
+    @include flexmix(1, 2, auto);
     padding: 0;
     margin: 0;
   }

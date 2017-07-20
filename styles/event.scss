@@ -38,6 +38,7 @@
 
 .event-box:hover {
   background-color: $event-hovered;
+  transform: translateX(3px);
 }
 
 .selected-event {

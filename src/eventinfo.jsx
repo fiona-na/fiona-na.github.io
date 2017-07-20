@@ -31,10 +31,10 @@ export default class EventInfo extends Component {
               <h1>{event.title}</h1>
               <h2>{event.type}</h2>
               <p>{event.data}</p>
-              <button className="delete-btn" onClick={this._deleteEvent}>
-                Delete
-              </button>
               <div className="tags">
+                <button className="delete-btn" onClick={this._deleteEvent}>
+                  Delete
+                </button>
                 <p className="id-tag">Service ID: {event.serviceid}</p>
                 <p className="date-tag">Posted: {new Date(parseInt(event.timestamp, 10)).toString()}</p>
               </div>

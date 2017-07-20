@@ -78,7 +78,7 @@ const SyncValidationForm = (props) => {
       <Field name="serviceid" type="text" component={renderField} label="Service ID"/>
       <div>
         <button type="submit" disabled={submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
       </div>
     </form>
   );

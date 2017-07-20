@@ -40,7 +40,8 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <h1>Hello Thalmic!</h1>
+          <h1 className="page-title">Eventy</h1>
+          <button className="create-btn" onClick={this._handleOpenModal.bind(this)}>Create</button>
           <div className="flex-container">
             <EventContainer/>
             <EventInfo/>
@@ -50,7 +51,6 @@ export default class App extends Component {
               handleClose={this._handleCloseModal.bind(this)}
             />
           </div>
-          <button onClick={this._handleOpenModal.bind(this)}>Create Event</button>
         </div>
       </Provider>
     );

@@ -20,7 +20,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       modalOpen: false
-    }
+    };
   }
 
   //handle opening and closing modal

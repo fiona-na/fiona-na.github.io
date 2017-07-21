@@ -35,7 +35,7 @@ export default class EventContainer extends Component {
                 />
             )}
             </div>
-          : <p>events loading</p>
+          : <p>events loading...</p>
         }
       </div>
     )
@@ -43,6 +43,6 @@ export default class EventContainer extends Component {
 
   //function handles clicks by setting sidebar info
   _handleClick = (event) => {
-    this.props.dispatch({type: 'SET_EVENT_INFO', data: event})
+    this.props.dispatch({type: 'SET_EVENT_INFO', data: event});
   }
 }

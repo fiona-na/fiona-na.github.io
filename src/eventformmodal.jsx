@@ -21,13 +21,13 @@ export default class EventFormModal extends Component {
     super(props);
     this.state = {
       ids: [],
-    }
+    };
   }
 
   render() {
     this.state.ids = this.props.events.map((event) => {
       return event.serviceid;
-    })
+    });
     const { open, handleClose, handleOpen } = this.props;
     return (
       <ReactModal
@@ -53,7 +53,7 @@ export default class EventFormModal extends Component {
   _showResults = (values) => {
     //Assign new event a timestamp with current time
     //and default icon if none given
-    const newEvent = Object.assign(values, {timestamp: Date.now().toString()})
+    const newEvent = Object.assign(values, {timestamp: Date.now().toString()});
     if (!newEvent.icon) {
       newEvent.icon = defaultIcon;
     }

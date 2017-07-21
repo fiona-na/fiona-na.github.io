@@ -26,7 +26,7 @@ export const apiMiddleware = store => next => action => {
       fetch(`${API}/${action.data}`, {method: 'DELETE'})
         .then(() => {
           store.dispatch({type:'GET_EVENT_DATA'});
-        })
+        });
       break;
     case 'ADD_NEW_EVENT':
       //Same as delete, make POST request, and the refetch the
@@ -38,9 +38,9 @@ export const apiMiddleware = store => next => action => {
           body: JSON.stringify(action.data)
         }).then(() => {
           store.dispatch({type: 'GET_EVENT_DATA'});
-        })
+        });
       break;
     default:
       break;
   }
-}
+};

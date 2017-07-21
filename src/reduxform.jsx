@@ -22,7 +22,7 @@ const validate = values => {
     errors.serviceid = 'Service ID is already in use';
   }
   return errors;
-}
+};
 
 //renders input fields with label and errors
 const renderField = ({ input, label, type, meta: { touched, error} }) => (
@@ -66,7 +66,7 @@ const renderSelectField = ({ input, label, type, meta: { touched, error} }) => (
 
 //actual form that will render field component based on field
 const SyncValidationForm = (props) => {
-  const { handleSubmit, pristine, reset, submitting, serviceIds } = props
+  const { handleSubmit, pristine, reset, submitting, serviceIds } = props;
   //set global list of ids to access from validations
   listOfServiceIds = serviceIds;
   return (
@@ -87,6 +87,6 @@ const SyncValidationForm = (props) => {
 export default reduxForm({
   form: 'syncValidation',
   validate     // magical validation of redux-form
-})(SyncValidationForm)
+})(SyncValidationForm);
 
 

@@ -29,7 +29,7 @@ I used the backend heroku server that was provided to make fetch requests to get
 
 Inside the styles folder, there is a file called tweakable.scss which can be used to easily modify things within the app such as colors and text fonts.
 
-If there are any issues or something need clarification, please let me know.
+If there are any issues or something needs clarification, please let me know.
 
 
 ## Dependencies

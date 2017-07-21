@@ -30,6 +30,7 @@ export default class EventInfo extends Component {
               <img
                 className="side-icon"
                 src={event.icon}
+                alt={event.icon}
                 width="150"
                 height="150"
               />

@@ -69,3 +69,23 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+img {
+  border-radius: 20%;
+  position: relative;
+}
+
+/*handle broken images*/
+img[alt]:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  line-height: 2;
+  overflow: hidden;
+  content: attr(alt);
+}

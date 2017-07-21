@@ -2,6 +2,8 @@
 
 Event is a simple event App made in React for Thalmic Labs.
 
+## [Live Demo](https://ffiargus.github.io/eventy/)
+
 ![Screenshot](./docs/images/sample.png)
 
 ## Setup
@@ -34,11 +36,11 @@ If there are any issues or something need clarification, please let me know.
 
 ## Dependencies
 
-Webpack-dev-server,
-Babel,
-Node Sass,
-React,
-React-Modal,
-Redux,
-React-Redux,
-Redux-Form
+* Webpack-dev-server
+* Babel
+* Node Sass
+* React
+* React-Modal
+* Redux
+* React-Redux
+* Redux-Form

@@ -2,7 +2,7 @@
 
 Event is a simple event App made in React for Thalmic Labs.
 
-[Screenshot](./docs/images/sample.png)
+![Screenshot](./docs/images/sample.png)
 
 ## Setup
 
@@ -16,9 +16,11 @@ Go to localhost:3000
 
 ## Features
 The App includes form validations to check that fields are filled and service IDs are not in use. The icon field is optional and a default image will be used if none is provided.
+
 ![Validations](./docs/images/validations.png)
 
 Responsive design was also incorporated and the page will be reorganized when scaled to a small screen.
+
 ![Responsive](./docs/images/responsive.png)
 
 ## Explanation

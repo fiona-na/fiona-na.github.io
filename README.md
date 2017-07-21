@@ -2,7 +2,7 @@
 
 Event is a simple event App made in React for Thalmic Labs.
 
-##[Live Demo](https://ffiargus.github.io/eventy/)
+### [Live Demo](https://ffiargus.github.io/eventy/)
 
 ![Screenshot](./docs/images/sample.png)
 

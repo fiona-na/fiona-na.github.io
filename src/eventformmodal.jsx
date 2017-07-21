@@ -4,7 +4,7 @@ import SyncValidationForm from './reduxform.jsx';
 import { connect } from 'react-redux';
 
 //random icon I found to use as default
-const defaultIcon = 'https://cdn3.iconfinder.com/data/icons/UltimateGnome/256x256/emblems/emblem-generic.png';
+const defaultIcon = 'https://lh3.googleusercontent.com/IpKJEd52l7TFnd3HkYk7pUMZUYgl0T36EuT0WN3H5VKDWixJWszqJp3JX4ShTwHbpx4=w300';
 
 //connect to store so we can use dispatch
 @connect((state) => {

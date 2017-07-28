@@ -21,7 +21,6 @@ export default class EventInfo extends Component {
   //else display event info
   render() {
     const { event } = this.props;
-    // const postDate = new Date(parseInt(event.timestamp, 10));
     return (
       <div className="event-info">
         {

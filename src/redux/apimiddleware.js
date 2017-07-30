@@ -1,7 +1,7 @@
 //API middleware, all actions that make request to
 //API backend goes here
 
-const API = 'https://forgetful-elephant.herokuapp.com/events';
+const API = 'https://morning-reaches-22096.herokuapp.com/events';
 
 export const apiMiddleware = store => next => action => {
   next(action);
@@ -11,7 +11,7 @@ export const apiMiddleware = store => next => action => {
       //backend
       store.dispatch({type: 'GET_EVENT_DATA_LOADING'});
       // Make API call and dispatch appropriate actions when done
-      fetch(API)
+      fetch(`${API}.json`)
         .then(res => res.json())
         .then(data => next({
           type: 'GET_EVENT_DATA_RECEIVED', data

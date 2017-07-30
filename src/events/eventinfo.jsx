@@ -13,7 +13,7 @@ export default class EventInfo extends Component {
 
   //function for handling the delete button
   _deleteEvent = () => {
-    this.props.dispatch({type: 'DELETE_EVENT_BY_ID', data: this.props.event.id});
+    this.props.dispatch({type: 'DELETE_EVENT_BY_ID', data: this.props.event._id});
   }
 
   //check if there is an event selected,

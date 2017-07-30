@@ -46,8 +46,6 @@ export default class EventContainer extends Component {
       showEvents = filterEventByTitle(searchFilter, showEvents);
     }
 
-    console.log(showEvents)
-
     //check if events exists if it does,
     //map through each one and print it,
     //otherwise tell user we are loading
@@ -60,8 +58,8 @@ export default class EventContainer extends Component {
               ldMap(showEvents, (event) =>
                 <Event
                   event={event}
-                  key={event.id}
-                  selected={selectedEvent ? selectedEvent.id : null}
+                  key={event._id}
+                  selected={selectedEvent ? selectedEvent._id : null}
                   handleClick={this._handleClick}
                 />
               )

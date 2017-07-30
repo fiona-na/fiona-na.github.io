@@ -1,12 +1,14 @@
 # Eventy
 
-Event is a simple event App made in React for Thalmic Labs.
+Eventy is a simple event App made in React.
 
 ### [Live Demo](https://ffiargus.github.io/)
 
 ![Screenshot](./docs/images/sample.png)
 
-## Setup
+##Running locally
+
+### Setup
 
 Clone this Repo
 
@@ -25,18 +27,10 @@ Responsive design was also incorporated and the page will be reorganized when sc
 
 ![Responsive](./docs/images/responsive.png)
 
-## Explanation
-
-I used the backend heroku server that was provided to make fetch requests to get, post and delete events. I decided to use Redux, as it provides for accessible state management and allows the app to be more easily scaled if more features were to be added in the future.
-
-Inside the styles folder, there is a file called tweakable.scss which can be used to easily modify things within the app such as colors and text fonts.
-
-If there are any issues or something needs clarification, please let me know.
-
 
 ## Dependencies
 
-* Webpack-dev-server
+* Webpack
 * Babel
 * Node Sass
 * React

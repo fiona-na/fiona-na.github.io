@@ -2,7 +2,7 @@
 
 Eventy is a simple event App made in React.
 
-### [Live Demo](https://ffiargus.github.io/)
+### [Live Demo](https://eventre.github.io/)
 
 ![Screenshot](./docs/images/sample.png)
 

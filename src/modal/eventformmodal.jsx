@@ -50,7 +50,7 @@ export default class EventFormModal extends Component {
   _showResults = (values) => {
     //Assign new event a timestamp with current time
     //and default icon if none given
-    const newEvent = {...values, timestamp: Date.now().toString()};
+    const newEvent = {...values, timestamp: Date.now()};
     if (!newEvent.icon) {
       newEvent.icon = defaultIcon;
     }

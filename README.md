@@ -3,10 +3,11 @@
 Eventy is a simple event App made in React.
 
 ### [Live Demo](https://eventre.github.io/)
+### [Mobile version in React Native](https://github.com/ffiargus/eventyMobile)
 
 ![Screenshot](./docs/images/sample.png)
 
-##Running locally
+## Running locally
 
 ### Setup
 

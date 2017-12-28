@@ -31,7 +31,6 @@ export const apiMiddleware = store => next => action => {
     case 'ADD_NEW_EVENT':
       //Same as delete, make POST request, and the refetch the
       //new list of events
-      console.log(JSON.stringify(action.data))
       fetch(API,
         {
           method: 'POST',

@@ -1,8 +1,8 @@
 //API middleware, all actions that make request to
 //API backend goes here
 
-// const API = 'https://morning-reaches-22096.herokuapp.com/invite';
-const API = 'http://localhost:8080/invite';
+const API = 'https://morning-reaches-22096.herokuapp.com/invite';
+// const API = 'http://localhost:8080/invite';
 
 export const apiMiddleware = store => next => action => {
   next(action);

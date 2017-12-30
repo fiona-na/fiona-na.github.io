@@ -12,8 +12,8 @@ import { connect } from 'react-redux';
 export default class EventInfo extends Component {
 
   //function for handling the delete button
-  _deleteEvent = () => {
-    this.props.dispatch({type: 'DELETE_EVENT_BY_ID', data: this.props.event._id});
+  updateEvent = () => {
+    this.props.dispatch({type: 'UPDATE_EVENT', data: this.props.event._id});
   }
 
   //check if there is an event selected,
@@ -26,22 +26,14 @@ export default class EventInfo extends Component {
         {
           event
           ? <div className="event-details">
-              <img
-                className="side-icon"
-                src={event.icon}
-                alt={event.icon}
-                width="150"
-                height="150"
-              />
-              <h1>{event.title}</h1>
-              <h2>{event.type}</h2>
-              <p className="desc-text">{event.data}</p>
+              <h1>{event.name}</h1>
+              <h2>{event.isOpen ? 'Opened!' : 'Unopen..'}</h2>
+              <p className="desc-text">{event.attending ? 'Attending!' : 'Not attending'}</p>
               <div className="tags">
-                <button className="delete-btn" onClick={this._deleteEvent}>
-                  Delete
+                <button className="delete-btn" onClick={this.updateEvent}>
+                  Update
                 </button>
-                <p className="id-tag">Service ID: {event.serviceid}</p>
-                <p className="date-tag">Posted: {new Date(parseInt(event.timestamp, 10)).toString()}</p>
+                <p className="id-tag">Service ID: {event._id}</p>
               </div>
             </div>
           : <p className="no-event">No Event Selected</p>

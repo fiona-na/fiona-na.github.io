@@ -1,7 +1,8 @@
 //API middleware, all actions that make request to
 //API backend goes here
 
-const API = 'https://morning-reaches-22096.herokuapp.com/events';
+// const API = 'https://morning-reaches-22096.herokuapp.com/invite';
+const API = 'http://localhost:8080/invite';
 
 export const apiMiddleware = store => next => action => {
   next(action);
@@ -11,7 +12,7 @@ export const apiMiddleware = store => next => action => {
       //backend
       store.dispatch({type: 'GET_EVENT_DATA_LOADING'});
       // Make API call and dispatch appropriate actions when done
-      fetch(`${API}.json`)
+      fetch(`${API}`)
         .then(res => res.json())
         .then(data => next({
           type: 'GET_EVENT_DATA_RECEIVED', data
@@ -28,14 +29,14 @@ export const apiMiddleware = store => next => action => {
           store.dispatch({type:'GET_EVENT_DATA'});
         });
       break;
-    case 'ADD_NEW_EVENT':
+    case 'ADD_INVITEE':
       //Same as delete, make POST request, and the refetch the
       //new list of events
       fetch(API,
         {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(action.data)
+          body: JSON.stringify({name: action.data})
         }).then(() => {
           store.dispatch({type: 'GET_EVENT_DATA'});
         });

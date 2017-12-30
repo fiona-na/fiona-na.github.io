@@ -19,19 +19,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false,
       filter: '',
-      searchString: ''
+      searchString: '',
+      inviteeName: ''
     };
-  }
-
-  //handle opening and closing modal
-  _handleOpenModal () {
-    this.setState({ modalOpen: true });
-  }
-
-  _handleCloseModal () {
-    this.setState({ modalOpen: false });
   }
 
   //dispatch type filter and search filter values
@@ -51,31 +42,37 @@ export default class App extends Component {
 
   _clearSearch (event) {
     this.setState({searchString: ''});
+    this.setState({inviteeName: ''});
     store.dispatch({type: 'SET_SEARCH_FILTER', data: ''});
+  }
+
+  updateName (name) {
+    this.setState({inviteeName: name.target.value});
+  }
+
+  addInvitee () {
+    store.dispatch({type: 'ADD_INVITEE', data: this.state.inviteeName})
   }
 
   //provide store to all components, and render 3 main
   //components, Event container, Event info Sidebar,
   //and event form modal
   render() {
-    const { modalOpen, filter, searchString } = this.state;
+    const { inviteeName, filter, searchString } = this.state;
     return (
       <Provider store={store}>
         <div className="page">
           <div className="header">
-            <h1 className="page-title">Eventy</h1>
-            <button
-              className="create-btn"
-              onClick={this._handleOpenModal.bind(this)}
-            >
-              Create
-            </button>
+            <h1 className="page-title">Fiona-Na</h1>
             <div className="header-form">
               <div className="input-group">
+                <input
+                  placeholder="Name"
+                  value={inviteeName}
+                  onChange={(name) => this.updateName(name)}
+                />
                 <span className="input-group-btn">
-                  <button onClick={() => this.searchField.focus()}>
-                    <i className="fa fa-search"/>...
-                  </button>
+                  <button onClick={() => this.addInvitee()}>Add</button>
                 </span>
                 <input
                   className="form-control"
@@ -89,25 +86,12 @@ export default class App extends Component {
                   <button onClick={this._clearSearch.bind(this)}>Clear</button>
                 </span>
               </div>
-              <select className="form-control" value={filter} onChange={this._handleFilterChange.bind(this)}>
-                <option value="">All</option>
-                <option value="Meetup">Meetup</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Lunch & Learn">Lunch & Learn</option>
-                <option value="Party">Party</option>
-                <option value="Other">Other</option>
-              </select>
             </div>
           </div>
           <div className="flex-container">
             <EventContainer/>
             <EventInfo/>
           </div>
-          <EventFormModal
-            open={modalOpen}
-            handleOpen={this._handleOpenModal.bind(this)}
-            handleClose={this._handleCloseModal.bind(this)}
-          />
         </div>
       </Provider>
     );
